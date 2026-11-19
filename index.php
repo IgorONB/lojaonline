@@ -1,0 +1,14 @@
+<?php
+$apps = [
+ ['id'=>1,'name'=>'Pixel Studio','category'=>'Design','price'=>'Grátis','rating'=>'4.9','icon'=>'🎨','description'=>'Crie artes, ilustrações e designs incríveis.'],
+ ['id'=>2,'name'=>'Focus Flow','category'=>'Produtividade','price'=>'R$ 19,90','rating'=>'4.8','icon'=>'⏱️','description'=>'Organize tarefas e mantenha seu foco.'],
+ ['id'=>3,'name'=>'SoundWave','category'=>'Música','price'=>'Grátis','rating'=>'4.7','icon'=>'🎧','description'=>'Descubra playlists e sons para qualquer momento.'],
+ ['id'=>4,'name'=>'CodeLab','category'=>'Educação','price'=>'R$ 9,90','rating'=>'4.9','icon'=>'💻','description'=>'Aprenda programação com desafios interativos.']
+];
+?>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>NovaStore | Início</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="topbar"><a class="brand" href="index.php"><span class="brand-icon">✦</span> NovaStore</a><nav><a class="active" href="index.php">Início</a><a href="apps.php">Aplicativos</a></nav><a class="nav-cta" href="apps.php">Explorar loja ↗</a></header>
+<main class="container"><section class="hero"><div class="hero-copy"><span class="eyebrow">A SUA PRÓXIMA DESCOBERTA</span><h1>Apps incríveis.<br><span>Novas possibilidades.</span></h1><p>Encontre ferramentas, jogos e experiências digitais que combinam com você.</p><a class="button" href="apps.php">Explorar aplicativos <span>→</span></a></div><div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="floating-app">✦</div><div class="mini-card mini-left">🎧 <b>SoundWave</b></div><div class="mini-card mini-right">🎨 <b>Pixel Studio</b></div><div class="spark">✧</div></div></section>
+<section class="section-heading"><div><span class="eyebrow">SELEÇÃO DA SEMANA</span><h2>Apps em destaque</h2></div><a class="text-link" href="apps.php">Ver todos →</a></section><section class="app-grid">
+<?php foreach(array_slice($apps,0,3) as $app): ?><article class="app-card"><div class="app-icon"><?php echo $app['icon']; ?></div><div class="app-info"><h3><?php echo htmlspecialchars($app['name']); ?></h3><p><?php echo htmlspecialchars($app['category']); ?></p><div class="app-meta"><span>★ <?php echo $app['rating']; ?></span><span><?php echo $app['price']; ?></span></div></div><a class="small-button" href="detalhes.php?id=<?php echo $app['id']; ?>">Ver app</a></article><?php endforeach; ?>
+</section><section class="promo"><div><span class="eyebrow">EXPLORE MAIS</span><h2>Seu próximo app favorito<br>está aqui.</h2><p>Explore nossa coleção e encontre algo novo para experimentar.</p></div><a class="button button-light" href="apps.php">Ver catálogo →</a></section></main><footer><span>© 2026 NovaStore</span><span>Uma vitrine de experiências digitais.</span></footer></body></html>
